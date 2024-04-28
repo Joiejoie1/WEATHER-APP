@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <link rel="stylesheet" href="./styles/registration.css">
+</head>
+
+<body>
+    
+    <div class="wrapper">
+
+        <form id="registrationForm">
+            <h1>Create New Account</h1>
+            <div class="input-box">
+                <input type="text" id="firstNameInput" placeholder="Enter your FirstName" required>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="lastNameInput" placeholder="Enter your LastName" required>
+            </div>
+            
+            
+            <div class="input-box">
+                <input type="email" id="emailInput" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" id="passwordInput" placeholder="Enter your password" required>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="phoneInput" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="addressInput" placeholder="Enter your address" required>
+            </div>
+        
+            <button type="submit" class="btn">Register</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let firstname = document.getElementById('firstNameInput').value;
+    let lastname = document.getElementById('lastNameInput').value;
+    let email = document.getElementById('emailInput').value;
+    let password = document.getElementById('passwordInput').value;
+    let phone = document.getElementById('phoneInput').value;
+    let address = document.getElementById('addressInput').value;
+
+    // Store user's email and password in localStorage
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+    localStorage.setItem('firstname', firstname)
+    localStorage.setItem('lastname', lastname)
+    localStorage.setItem('phone', phone)
+    localStorage.setItem('address', address)
+
+    alert('Registration successful. You can now login.');
+    window.location.href = 'login.html'; // Redirect to login page
+});
+
+    </script>
+</body>
+
+</html>
