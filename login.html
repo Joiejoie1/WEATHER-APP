@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/loginStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <form id="loginForm" action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="email" id="emailInput" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+        
+            <div class="input-box">
+                <input type="password" name="password" id="password" placeholder="Enter password" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">
+                    <i class="bx bx-hide"></i>
+                </span>
+                <p class="enter-password-alert" id="enter-password-alert"></p>
+            </div>
+            
+        
+        
+            <button type="submit" class="btn">Login</button>
+        
+            <div class="register-link">
+                <p>Dont have an account? <a href="registration.html">Register</a> </p>
+                <p>goto <a href="index.html">home</a> </p>
+            </div>
+        </form>
+        
+    </div>
+    <script >
+
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  let email = document.getElementById('emailInput').value;
+  let password = document.getElementById('password').value;
+
+  let storedEmail = localStorage.getItem('email');
+  let storedPassword = localStorage.getItem('password');
+
+  if (email === storedEmail && password === storedPassword) {
+      window.location.href = 'index.html';
+  } else if (storedEmail !== null && storedPassword !== null) {
+      alert('Invalid email or password. Please try again.');
+  } else {
+      if (confirm('Account not found. Would you like to create a new account?')) {
+          window.location.href = 'registration.html'; // Redirect to registration page
+      } else {
+          alert('You can\'t use the weather app without creating an account.');
+      }
+  }
+});
+
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.querySelector('.toggle-password i');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('bx-hide');
+        eyeIcon.classList.add('bx-show');
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('bx-show');
+        eyeIcon.classList.add('bx-hide');
+    }
+}
+
+
+
+    </script>
+</body>
+
+</html>
