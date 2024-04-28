@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group3 Weather Forecast</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Group A Weather Forecast</h1>
+
+      <nav>
+        <div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div id="welcomeMessage">
+          
+        </div>
+      </nav>
+
+      <div class="dark-mode-switch">
+        <input type="checkbox" id="dark-mode-toggle" title="Toggle dark mode">
+        <label for="dark-mode-toggle"></label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Welcome to Group A Weather Forecast</h2>
+      <form id="weatherForm" action="#">
+        <input type="text" id="locationInput" placeholder="Enter location...">
+        <button type="submit">Get Weather</button>
+      </form>
+      <div id="weatherInfo" class="weather-info"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Group A Weather Forecast. All rights reserved.</p>
+      <ul class="social-media">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>
